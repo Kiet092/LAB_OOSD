@@ -1,0 +1,56 @@
+# HỆ THỐNG QUẢN LÝ KHÁCH SẠN (JAVA SWING & SQL SERVER)
+
+Ứng dụng quản lý khách sạn với giao diện người dùng (GUI) được xây dựng bằng **Java Swing**[cite: 2] kết nối với cơ sở dữ liệu **Microsoft SQL Server**[cite: 1]. Chương trình cung cấp giao diện trực quan giúp quản lý thông tin khách hàng, phòng ở, dịch vụ, hóa đơn và thống kê doanh thu[cite: 2].
+
+---
+
+## 📌 Tính năng chính
+
+Chương trình bao gồm các chức năng cốt lõi sau[cite: 2]:
+
+1. **Quản lý danh mục khách hàng**: Hiển thị danh sách khách hàng (Mã khách, Họ tên, CMND/CCCD, Quốc tịch, SĐT) từ bảng `KhachHang`[cite: 2].
+2. **Quản lý phòng & tiện nghi**: Xem danh sách phòng, sức chứa, đơn giá, trạng thái và khu vực từ bảng `Phong`[cite: 2].
+3. **Quản lý đặt / nhận phòng**: Theo dõi phiếu đặt phòng, kênh đặt, tiền cọc và trạng thái từ bảng `PhieuDatPhong`[cite: 2].
+4. **Quản lý dịch vụ**: Hiển thị danh mục dịch vụ kèm đơn giá và đơn vị tính từ bảng `DichVu`[cite: 2].
+5. **Trả phòng & Thanh toán**: Xem chi tiết hóa đơn (Tiền phòng, Tiền dịch vụ, Tổng tiền, Trạng thái) từ bảng `HoaDon`[cite: 2].
+6. **Thống kê doanh thu**: Tổng hợp tổng số hóa đơn và tổng doanh thu ghi nhận từ cơ sở dữ liệu[cite: 2].
+
+---
+
+## 🛠️ Công nghệ sử dụng
+
+* **Ngôn ngữ lập trình**: Java (JDK 8 trở lên)
+* **Thư viện giao diện**: Java Swing & AWT[cite: 2]
+* **Cơ sở dữ liệu**: Microsoft SQL Server[cite: 1]
+* **Driver kết nối**: `mssql-jdbc`[cite: 1]
+
+---
+
+## 🗄️ Cấu trúc dự án
+
+* `DBConnection.java`: Lớp kết nối tới CSDL SQL Server tên `QLKhachSan` thông qua JDBC và lấy thông tin tài khoản qua biến môi trường[cite: 1].
+* `QuanLyKhachSan.java`: Lớp giao diện chính (Main Window), xử lý sự kiện chuyển các form xem dữ liệu dưới dạng `JDialog`[cite: 2].
+
+---
+
+## ⚙️ Hướng dẫn cài đặt & Chạy ứng dụng
+
+### 1. Yêu cầu hệ thống
+* Đã cài đặt JDK (Java Development Kit).
+* Đã có CSDL `QLKhachSan` trên Microsoft SQL Server[cite: 1].
+* Đã thêm thư viện `mssql-jdbc-*.jar` vào **Classpath** dự án[cite: 1].
+
+### 2. Cấu hình Biến môi trường (Environment Variables)
+Chương trình bảo mật thông tin đăng nhập bằng cách đọc qua biến môi trường[cite: 1]. Cần thiết lập 2 biến sau trên máy tính/IDE trước khi chạy[cite: 1]:
+
+* `QLKHACH_SAN_DB_USER`: Tên tài khoản SQL Server[cite: 1]
+* `QLKHACH_SAN_DB_PASSWORD`: Mật khẩu tài khoản SQL Server[cite: 1]
+
+### 3. Lệnh biên dịch & Chạy ứng dụng
+
+**Biên dịch:**cd D:\1250080092\LAB_OOSD\LAB3
+$jar = (Get-ChildItem -Recurse -Filter "mssql-jdbc-*.jar" | Select-Object -First 1).FullName
+javac -cp ".;$jar" DBConnection.java QuanLyKhachSan.java
+java -cp ".;$jar" QuanLyKhachSan
+```bash
+javac -cp .;mssql-jdbc-xxx.jar DBConnection.java QuanLyKhachSan.java
