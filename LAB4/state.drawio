@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="BnmzZ1ubO8sn9JCbxSh8" name="Page-1">
+        <mxGraphModel dx="691" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" value="SƠ ĐỒ TRẠNG THÁI ĐƠN HÀNG (ORDER STATE MACHINE DIAGRAM)" vertex="1">
+                    <mxGeometry height="30" width="550" x="40" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="30" width="30" x="60" y="165" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_new" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontStyle=1;" value="Mới khởi tạo&#xa;(Created)" vertex="1">
+                    <mxGeometry height="60" width="130" x="160" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_pending" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontStyle=1;" value="Chờ thanh toán&#xa;(Pending Payment)" vertex="1">
+                    <mxGeometry height="60" width="140" x="380" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_paid" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontStyle=1;" value="Đã thanh toán&#xa;(Paid / Processing)" vertex="1">
+                    <mxGeometry height="60" width="140" x="620" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_shipping" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontStyle=1;" value="Đang giao hàng&#xa;(Shipping)" vertex="1">
+                    <mxGeometry height="60" width="130" x="860" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_completed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontStyle=1;" value="Hoàn thành&#xa;(Completed)" vertex="1">
+                    <mxGeometry height="60" width="130" x="860" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_cancelled" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8CECC;strokeColor=#B85450;fontStyle=1;" value="Đã hủy&#xa;(Cancelled)" vertex="1">
+                    <mxGeometry height="60" width="140" x="380" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_end1" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="30" width="30" x="910" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="st_end2" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+                    <mxGeometry height="30" width="30" x="435" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr0" edge="1" parent="1" source="st_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;" target="st_new" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr1" edge="1" parent="1" source="st_new" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=bottom;" target="st_pending" value="Tạo đơn thành công">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr2" edge="1" parent="1" source="st_pending" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=bottom;" target="st_paid" value="Thanh toán thành công">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr3" edge="1" parent="1" source="st_pending" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=middle;align=center;" target="st_cancelled" value="Thanh toán thất bại / Quá giờ">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr4" edge="1" parent="1" source="st_paid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=bottom;" target="st_shipping" value="Đóng gói &amp; Bàn giao ĐVVC">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr5" edge="1" parent="1" source="st_paid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=bottom;" target="st_cancelled" value="Khách hủy trước khi giao">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="690" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tr6" edge="1" parent="1" source="st_shipping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=middle;" target="st_completed" value="Giao hàng thành công">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr7" edge="1" parent="1" source="st_shipping" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;verticalAlign=bottom;" target="st_cancelled" value="Giao thất bại / Khách trả hàng">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="925" y="270"/>
+                            <mxPoint x="450" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tr8" edge="1" parent="1" source="st_completed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;" target="st_end1" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tr9" edge="1" parent="1" source="st_cancelled" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endSize=8;" target="st_end2" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

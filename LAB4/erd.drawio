@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e">
+    <diagram id="jQDHrjiTGbyxQ9X_1-Y4" name="Page-1">
+        <mxGraphModel dx="691" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1650" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" value="SƠ ĐỒ CƠ SỞ DỮ LIỆU QUẢN HỆ (ER DIAGRAM) - e-SHOPPING" vertex="1">
+                    <mxGeometry height="30" width="500" x="40" y="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_customers" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="CUSTOMERS&#xa;--&#xa;PK customer_id : VARCHAR(20)&#xa;full_name : NVARCHAR(100)&#xa;dob : DATE&#xa;identity_card : VARCHAR(20)&#xa;address : NVARCHAR(200)&#xa;phone : VARCHAR(15)&#xa;username : VARCHAR(50)&#xa;password : VARCHAR(255)&#xa;email : VARCHAR(100)" vertex="1">
+                    <mxGeometry height="210" width="260" x="40" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_carts" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="CARTS&#xa;--&#xa;PK cart_id : VARCHAR(20)&#xa;FK customer_id : VARCHAR(20)&#xa;created_at : DATETIME" vertex="1">
+                    <mxGeometry height="100" width="260" x="40" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_cart_items" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="CART_ITEMS&#xa;--&#xa;PK,FK cart_id : VARCHAR(20)&#xa;PK,FK product_id : VARCHAR(20)&#xa;quantity : INT" vertex="1">
+                    <mxGeometry height="100" width="260" x="40" y="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_categories" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="CATEGORIES&#xa;--&#xa;PK category_id : VARCHAR(20)&#xa;category_name : NVARCHAR(100)" vertex="1">
+                    <mxGeometry height="90" width="260" x="360" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_products" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="PRODUCTS&#xa;--&#xa;PK product_id : VARCHAR(20)&#xa;FK category_id : VARCHAR(20)&#xa;product_name : NVARCHAR(150)&#xa;manufacturer : NVARCHAR(100)&#xa;description : TEXT&#xa;specifications : TEXT&#xa;current_price : DECIMAL(15,2)&#xa;is_available : BOOLEAN" vertex="1">
+                    <mxGeometry height="200" width="260" x="360" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_orders" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="ORDERS&#xa;--&#xa;PK order_id : VARCHAR(20)&#xa;FK customer_id : VARCHAR(20)&#xa;order_date : DATETIME&#xa;shipping_type : VARCHAR(50)&#xa;total_amount : DECIMAL(15,2)&#xa;shipping_fee : DECIMAL(15,2)&#xa;recipient_name : NVARCHAR(100)&#xa;recipient_address : NVARCHAR(200)&#xa;recipient_phone : VARCHAR(15)&#xa;status : VARCHAR(30)" vertex="1">
+                    <mxGeometry height="230" width="260" x="720" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_order_details" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="ORDER_DETAILS&#xa;--&#xa;PK,FK order_id : VARCHAR(20)&#xa;PK,FK product_id : VARCHAR(20)&#xa;quantity : INT&#xa;unit_price : DECIMAL(15,2)" vertex="1">
+                    <mxGeometry height="110" width="260" x="720" y="485" as="geometry"/>
+                </mxCell>
+                <mxCell id="tbl_payments" parent="1" style="shape=swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" value="PAYMENTS&#xa;--&#xa;PK payment_id : VARCHAR(20)&#xa;FK order_id : VARCHAR(20)&#xa;card_type : VARCHAR(30)&#xa;card_number_masked : VARCHAR(20)&#xa;card_holder : NVARCHAR(100)&#xa;transaction_amount : DECIMAL(15,2)&#xa;fee : DECIMAL(15,2)&#xa;payment_date : DATETIME&#xa;status : VARCHAR(30)" vertex="1">
+                    <mxGeometry height="210" width="260" x="1170" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel1" edge="1" parent="1" source="tbl_customers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_orders">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel2" edge="1" parent="1" source="tbl_customers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERone;endFill=0;startArrow=ERone;startFill=0;" target="tbl_carts">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel3" edge="1" parent="1" source="tbl_categories" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_products">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel4" edge="1" parent="1" source="tbl_products" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_order_details">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel5" edge="1" parent="1" source="tbl_orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_order_details">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel6" edge="1" parent="1" source="tbl_carts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_cart_items">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel7" edge="1" parent="1" source="tbl_products" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERmany;endFill=0;startArrow=ERone;startFill=0;" target="tbl_cart_items">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel8" edge="1" parent="1" source="tbl_orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=ERone;endFill=0;startArrow=ERone;startFill=0;" target="tbl_payments">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

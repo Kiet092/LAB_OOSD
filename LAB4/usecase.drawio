@@ -1,0 +1,130 @@
+<mxfile host="65bd71144e">
+    <diagram id="paTuMK15DoY3e6itrjl1" name="Page-1">
+        <mxGraphModel dx="864" dy="698" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="act_customer" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Khách hàng" vertex="1">
+                    <mxGeometry height="60" width="30" x="80" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="act_product_sys" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Hệ thống quản lý&#xa;sản phẩm" vertex="1">
+                    <mxGeometry height="60" width="30" x="460" y="590" as="geometry"/>
+                </mxCell>
+                <mxCell id="act_payment_sys" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Hệ thống thanh toán&#xa;trực tuyến" vertex="1">
+                    <mxGeometry height="60" width="30" x="640" y="670" as="geometry"/>
+                </mxCell>
+                <mxCell id="act_email_sys" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Hệ thống Email" vertex="1">
+                    <mxGeometry height="60" width="30" x="1080" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_register" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Đăng ký tài khoản" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_login" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Đăng nhập" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_cart_mgmt" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Quản lý giỏ hàng" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_delete_prod" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Xóa sản phẩm" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_update_cart" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Cập nhật giỏ hàng" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_add_prod" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Thêm sản phẩm" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_order" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Đặt hàng" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_payment" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Thanh toán" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_recipient_info" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Nhập thông tin&#xa;người nhận" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_shipping_type" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Chọn hình thức&#xa;giao hàng" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="410" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_calc_total" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Tính tổng tiền" vertex="1">
+                    <mxGeometry height="40" width="120" x="460" y="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_view_prod" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Xem sản phẩm" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_view_prod_detail" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Xem chi tiết&#xa;sản phẩm" vertex="1">
+                    <mxGeometry height="40" width="120" x="280" y="560" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_check_payment" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Kiểm tra thanh toán" vertex="1">
+                    <mxGeometry height="40" width="120" x="610" y="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_record_order" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Ghi nhận đơn hàng" vertex="1">
+                    <mxGeometry height="40" width="120" x="760" y="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="uc_send_email" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Gửi email xác nhận" vertex="1">
+                    <mxGeometry height="40" width="120" x="910" y="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" edge="1" parent="1" source="act_customer" target="uc_register">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="act_customer" target="uc_login">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="act_customer" target="uc_cart_mgmt">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" edge="1" parent="1" source="act_customer" target="uc_order">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" edge="1" parent="1" source="act_customer" target="uc_view_prod">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" edge="1" parent="1" source="act_customer" target="uc_view_prod_detail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" edge="1" parent="1" source="uc_view_prod" style="dashed=1;endArrow=open;" target="act_product_sys">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" edge="1" parent="1" source="uc_view_prod_detail" style="dashed=1;endArrow=open;" target="act_product_sys">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" edge="1" parent="1" source="uc_check_payment" style="dashed=1;endArrow=open;" target="act_payment_sys">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e10" edge="1" parent="1" source="uc_send_email" target="act_email_sys">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc1" edge="1" parent="1" source="uc_cart_mgmt" style="dashed=1;endArrow=open;" target="uc_delete_prod" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc2" edge="1" parent="1" source="uc_cart_mgmt" style="dashed=1;endArrow=open;" target="uc_update_cart" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc3" edge="1" parent="1" source="uc_cart_mgmt" style="dashed=1;endArrow=open;" target="uc_add_prod" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc4" edge="1" parent="1" source="uc_order" style="dashed=1;endArrow=open;" target="uc_payment" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc5" edge="1" parent="1" source="uc_order" style="dashed=1;endArrow=open;" target="uc_recipient_info" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc6" edge="1" parent="1" source="uc_order" style="dashed=1;endArrow=open;" target="uc_shipping_type" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc7" edge="1" parent="1" source="uc_order" style="dashed=1;endArrow=open;" target="uc_calc_total" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc8" edge="1" parent="1" source="uc_payment" style="dashed=1;endArrow=open;" target="uc_check_payment" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc9" edge="1" parent="1" source="uc_check_payment" style="dashed=1;endArrow=open;" target="uc_record_order" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inc10" edge="1" parent="1" source="uc_record_order" style="dashed=1;endArrow=open;" target="uc_send_email" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

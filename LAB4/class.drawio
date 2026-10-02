@@ -1,0 +1,61 @@
+<mxfile host="65bd71144e">
+    <diagram id="1yI0nkqmLx7jRakd1L9U" name="Page-1">
+        <mxGraphModel dx="921" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="cls_customer" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="Customer&#xa;--&#xa;+ customerId: String&#xa;+ fullName: String&#xa;+ dob: Date&#xa;+ identityCard: String&#xa;+ address: String&#xa;+ phone: String&#xa;+ username: String&#xa;+ password: String&#xa;+ email: String&#xa;--&#xa;+ register(): Boolean&#xa;+ login(): Boolean" vertex="1">
+                    <mxGeometry height="230" width="260" x="40" y="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_category" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="Category&#xa;--&#xa;+ categoryId: String&#xa;+ categoryName: String&#xa;--&#xa;+ getProducts(): List&lt;Product&gt;" vertex="1">
+                    <mxGeometry height="120" width="260" x="890" y="630" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_product" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="Product&#xa;--&#xa;+ productId: String&#xa;+ productName: String&#xa;+ manufacturer: String&#xa;+ description: String&#xa;+ specifications: String&#xa;+ currentPrice: Double&#xa;+ isAvailable: Boolean&#xa;+ images: List&lt;String&gt;&#xa;--&#xa;+ getDetail(): Product&#xa;+ updateStock(): void" vertex="1">
+                    <mxGeometry height="230" width="260" x="890" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_cart" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="Cart&#xa;--&#xa;+ cartId: String&#xa;+ customerId: String&#xa;--&#xa;+ addProduct(p: Product, qty: Int): void&#xa;+ removeProduct(p: Product): void&#xa;+ updateQuantity(p: Product, qty: Int): void&#xa;+ clear(): void" vertex="1">
+                    <mxGeometry height="150" width="280" x="40" y="340" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_order" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="Order&#xa;--&#xa;+ orderId: String&#xa;+ orderDate: DateTime&#xa;+ shippingType: String&#xa;+ totalAmount: Double&#xa;+ shippingFee: Double&#xa;+ recipientName: String&#xa;+ recipientAddress: String&#xa;+ recipientPhone: String&#xa;+ status: String&#xa;--&#xa;+ calculateShippingFee(): Double&#xa;+ calculateTotal(): Double&#xa;+ createOrder(): Boolean" vertex="1">
+                    <mxGeometry height="250" width="260" x="355" y="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_orderdetail" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="OrderDetail&#xa;--&#xa;+ quantity: Int&#xa;+ unitPrice: Double&#xa;--&#xa;+ getSubTotal(): Double" vertex="1">
+                    <mxGeometry height="120" width="220" x="910" y="115" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_creditcard" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="CreditCard&#xa;--&#xa;+ cardType: String&#xa;+ cardNumber: String&#xa;+ cardHolderName: String&#xa;+ expiryDate: String&#xa;+ csv: String&#xa;--&#xa;+ validateCard(): Boolean" vertex="1">
+                    <mxGeometry height="150" width="220" x="380" y="650" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_payment" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="PaymentTransaction&#xa;--&#xa;+ transactionId: String&#xa;+ transactionDate: DateTime&#xa;+ amount: Double&#xa;+ fee: Double&#xa;+ status: String&#xa;--&#xa;+ processPayment(): Boolean" vertex="1">
+                    <mxGeometry height="150" width="220" x="380" y="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="cls_email" parent="1" style="swipeable=0;html=1;shape=mxgraph.bootstrap.rrect;rSize=5;align=left;spacingLeft=10;fontStyle=1;whiteSpace=wrap;" value="EmailService&#xa;--&#xa;--&#xa;+ sendOrderConfirmation(order: Order): Boolean" vertex="1">
+                    <mxGeometry height="90" width="310" x="550" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel1" edge="1" parent="1" source="cls_customer" style="endArrow=open;endSize=12;html=1;" target="cls_order">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel2" edge="1" parent="1" source="cls_customer" style="endArrow=open;endSize=12;html=1;" target="cls_cart">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel3" edge="1" parent="1" source="cls_category" style="endArrow=diamondThin;endSize=12;html=1;" target="cls_product">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel4" edge="1" parent="1" source="cls_product" style="endArrow=open;endSize=12;html=1;" target="cls_orderdetail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel5" edge="1" parent="1" source="cls_order" style="endArrow=diamond;endSize=12;html=1;" target="cls_orderdetail">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel6" edge="1" parent="1" source="cls_order" style="endArrow=open;endSize=12;html=1;" target="cls_payment">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel7" edge="1" parent="1" source="cls_creditcard" style="endArrow=open;endSize=12;html=1;" target="cls_payment">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel8" edge="1" parent="1" source="cls_order" style="dashed=1;endArrow=open;endSize=12;html=1;" target="cls_email">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
