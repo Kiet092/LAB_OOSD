@@ -1,0 +1,5 @@
+out/
+*.class
+*.dat
+lib/mssql-jdbc-*.jar
+lib/mssql-jdbc_auth-*.dll
